@@ -1,30 +1,61 @@
 #include <iostream>
-#include "graph.h"
+#include "GraphMethods.h"
 
 int main() {
-    Graph g(4);
-    g.addEdge(0, 1, 2);
-    g.addEdge(0, 2, 3);
-    g.addEdge(1, 2, 1);
-    g.addEdge(1, 3, 4);
-    g.addEdge(2, 3, 2);
-    std::cout << "Graph size: " << g.getSize() << std::endl;
-    std::cout << "Vertex 2 has neighbors: ";
-    std::vector<int> neighbors = g.getNeighbors(2);
-    for (int i = 0; i < neighbors.size(); i++) {
-        std::cout << neighbors[i] << " ";
+    GraphMethods graphMethods;
+    int methodChoice;
+    int dataChoice;
+
+    std::cout << "Виберіть метод (1-8):" << std::endl;
+    std::cout << "1. Обхід графа - пошук в ширину" << std::endl;
+    std::cout << "2. Обхід графа - пошук в глибину" << std::endl;
+    std::cout << "3. Алгоритм Пріма побудови мінімального кістякового дерева" << std::endl;
+    std::cout << "4. Алгоритм Дейкстри пошуку найкоротших шляхів" << std::endl;
+    std::cout << "5. Алгоритм А* пошуку найкоротших шляхів" << std::endl;
+    std::cout << "6. Алгоритм Форда-Фалкерсона пошуку максимального потоку" << std::endl;
+    std::cout << "7. Двонаправлений алгоритм Дейкстри для пошуку потенційних друзів в соціальній мережі" << std::endl;
+    std::cout << "8. Двонаправлений алгоритм А* пошуку оптимального шляху" << std::endl;
+
+    std::cin >> methodChoice;
+
+    std::cout << "Виберіть дані (1-2):" << std::endl;
+    std::cout << "1. Заготовлені дані" << std::endl;
+    std::cout << "2. Дані з файлу" << std::endl;
+
+    std::cin >> dataChoice;
+
+    if (dataChoice == 2) {
+        graphMethods.importDataFromFile();
     }
-    std::cout << std::endl;
-    std::cout << "Edge between vertices 1 and 2: " << g.hasEdge(1, 2) << std::endl;
-    g.removeVertex(2);
-    std::cout << "Graph size after removing vertex 2: " << g.getSize() << std::endl;
-    std::cout << "Vertex 1 has neighbors: ";
-    neighbors = g.getNeighbors(1);
-    for (int i = 0; i < neighbors.size(); i++) {
-        std::cout << neighbors[i] << " ";
+
+    switch (methodChoice) {
+    case 1:
+        graphMethods.breadthFirstSearch();
+        break;
+    case 2:
+        graphMethods.depthFirstSearch();
+        break;
+    case 3:
+        graphMethods.primAlgorithm();
+        break;
+    case 4:
+        graphMethods.dijkstraAlgorithm();
+        break;
+    case 5:
+        graphMethods.aStarAlgorithm();
+        break;
+    case 6:
+        graphMethods.fordFulkersonAlgorithm();
+        break;
+    case 7:
+        graphMethods.bidirectionalDijkstraAlgorithm();
+        break;
+    case 8:
+        graphMethods.bidirectionalAStarAlgorithm();
+        break;
+    default:
+        break;
     }
-    std::cout << std::endl;
-    std::cout << "Edge between vertices 1 and 2 after removing vertex 2: "<< g.hasEdge(1, 2) << std::endl;
 
     return 0;
 }
