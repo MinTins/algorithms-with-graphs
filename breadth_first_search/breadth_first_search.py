@@ -4,10 +4,8 @@ import matplotlib.pyplot as plt
 # зчитуємо граф з файлу
 with open('graph.txt', 'r') as f:
     n,m,start_node = map(int, f.readline().split())
+    data = [list( line.strip().split() ) for line in f.readlines()]
 
-    data = list({tuple( line.strip().split() ) for line in f.readlines()})
-
-# перетворюємо рядки у списки
 
 
 
@@ -19,7 +17,7 @@ for i in range(n):
     G.add_node(i)
 
 # додаємо ребра до графа
-for i in range(m):
+for i in range(len(data)):
     u = int(data[i][0])
     v = int(data[i][1])
     G.add_edge(u, v)
