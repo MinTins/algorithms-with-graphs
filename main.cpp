@@ -1,15 +1,16 @@
+
 #include <iostream>
 #include <string>
+
 
 // import methods
 #include "breadth_first_search/breadth_first_search.h"
 #include "depth_first_search/depth_first_search.h"
 #include "prim_minimum_spanning_tree/prim_minimum_spanning_tree.h"
 
-void testBFS(std::string filename);
-
 
 int main() {
+    BreadthFirstSearch bfs;
     DepthFirstSearch dfs;
     PrimMinimumSpanningTree prim;
 
@@ -55,7 +56,7 @@ int main() {
             switch (choice) {
             case 1:
                 // Test Breadth-First Search
-                testBFS("breadth_first_search/test_bfs_data.txt");
+                bfs.bfs("breadth_first_search/test_bfs_data.txt");
                 break;
             case 2:
                 // Test Depth-First Search
@@ -94,7 +95,7 @@ int main() {
             switch (choice) {
             case 1:
                 // Test Breadth-First Search
-                testBFS(input);
+                //bfs.bfs_from_file(input);
                 break;
             case 2:
                 // Test Depth-First Search
