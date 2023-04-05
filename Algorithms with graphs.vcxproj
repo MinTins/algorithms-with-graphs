@@ -142,13 +142,16 @@
   <ItemGroup>
     <ClCompile Include="breadth_first_search\breadth_first_search.cpp" />
     <ClCompile Include="breadth_first_search\test_bfs.cpp" />
+    <ClCompile Include="depth_first_search\depth_first_search.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="breadth_first_search\breadth_first_search.h" />
+    <Text Include="breadth_first_search\test_bfs_data.txt" />
+    <Text Include="depth_first_search\test_dfs_data.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="breadth_first_search\test_bfs_data.txt" />
+    <ClInclude Include="breadth_first_search\breadth_first_search.h" />
+    <ClInclude Include="depth_first_search\depth_first_search.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

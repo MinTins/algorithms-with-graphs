@@ -24,13 +24,20 @@
     <ClCompile Include="breadth_first_search\test_bfs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="depth_first_search\depth_first_search.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="breadth_first_search\test_bfs_data.txt" />
+    <Text Include="depth_first_search\test_dfs_data.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="breadth_first_search\breadth_first_search.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="breadth_first_search\test_bfs_data.txt" />
+    <ClInclude Include="depth_first_search\depth_first_search.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

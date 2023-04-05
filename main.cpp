@@ -1,10 +1,14 @@
 #include <iostream>
 #include <string>
 #include "breadth_first_search/breadth_first_search.h"
+#include "depth_first_search/depth_first_search.h"
 
 void testBFS(std::string filename);
 
 int main() {
+    DepthFirstSearch dfs;
+
+
     std::string input;
     int choice = 0;
     while (true) {
@@ -50,7 +54,7 @@ int main() {
                 break;
             case 2:
                 // Test Depth-First Search
-                // testDFS("depth_first_search/test_dfs_data.txt");
+                dfs.test_dfs();
                 break;
             case 3:
                 // Test Prim's Minimum Spanning Tree
@@ -89,7 +93,7 @@ int main() {
                 break;
             case 2:
                 // Test Depth-First Search
-                // testDFS(input);
+                dfs.test_dfs(input);
                 break;
             case 3:
                 // Test Prim's Minimum Spanning Tree
