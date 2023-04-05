@@ -1,12 +1,17 @@
 #include <iostream>
 #include <string>
+
+// import methods
 #include "breadth_first_search/breadth_first_search.h"
 #include "depth_first_search/depth_first_search.h"
+#include "prim_minimum_spanning_tree/prim_minimum_spanning_tree.h"
 
 void testBFS(std::string filename);
 
+
 int main() {
     DepthFirstSearch dfs;
+    PrimMinimumSpanningTree prim;
 
 
     std::string input;
@@ -58,7 +63,7 @@ int main() {
                 break;
             case 3:
                 // Test Prim's Minimum Spanning Tree
-                // testPrim("prim_minimum_spanning_tree/test_prim_data.txt");
+                prim.testPrim();
                 break;
             case 4:
                 // Test Dijkstra's Shortest Path
@@ -97,7 +102,7 @@ int main() {
                 break;
             case 3:
                 // Test Prim's Minimum Spanning Tree
-                // testPrim(input);
+                prim.findMSTFromFile(input);
                 break;
             case 4:
                 // Test Dijkstra's Shortest Path
