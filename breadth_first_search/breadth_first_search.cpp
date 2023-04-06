@@ -38,6 +38,12 @@ void BreadthFirstSearch::bfs()
 
 void BreadthFirstSearch::bfs(const std::string& filename)
 {
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Error opening file\n";
+        return;
+    }
+
     std::ifstream in(filename);
     int n, m, start_vertex;
     in >> n >> m >> start_vertex;

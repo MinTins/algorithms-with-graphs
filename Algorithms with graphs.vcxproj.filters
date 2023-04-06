@@ -42,9 +42,11 @@
   <ItemGroup>
     <None Include="breadth_first_search\breadth_first_search.py" />
     <None Include="depth_first_search\depth_first_search.py" />
+    <None Include="prim_minimum_spanning_tree\prim_minimum_spanning_tree.py" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="breadth_first_search\test_bfs_data.txt" />
     <Text Include="depth_first_search\test_dfs_data.txt" />
+    <Text Include="prim_minimum_spanning_tree\test_prim_data.txt" />
   </ItemGroup>
 </Project>

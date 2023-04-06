@@ -7,8 +7,6 @@ with open('graph.txt', 'r') as f:
     data = [list( line.strip().split() ) for line in f.readlines()]
 
 
-
-
 # створюємо граф
 G = nx.Graph()
 
@@ -24,7 +22,13 @@ for i in range(len(data)):
 
 # візуалізуємо граф
 pos = nx.spring_layout(G)
-nx.draw(G, pos, with_labels=True)
+
+nx.draw_networkx_nodes(G, pos, node_color='lightblue')
+nx.draw_networkx_nodes(G, pos, nodelist=[start_node], node_color='blue')
+nx.draw_networkx_edges(G, pos, edgelist=[(x,y) for x,y in G.edges() if x!=y], edge_color='black', width=1)    
+nx.draw_networkx_labels(G, pos, font_size=10, font_family="sans-serif")
+plt.axis('off')
+#nx.draw(G, pos, with_labels=True)
 
 # зберігаємо початковий стан графа
 plt.savefig('temp0.png')
@@ -54,7 +58,7 @@ while queue:
             
             # виділяємо ребро, яке веде до сусідньої вершини
             edge = (node, neighbor)
-            nx.draw_networkx_edges(G, pos, edgelist=[edge], edge_color='r')
+            nx.draw_networkx_edges(G, pos, edgelist=[edge], edge_color='r', width=3)
             
             # зберігаємо стан графа
             plt.savefig(f'temp{step}.png')

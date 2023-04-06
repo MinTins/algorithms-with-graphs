@@ -7,8 +7,6 @@ with open('graph.txt', 'r') as f:
     edges = [list(int(x) for  x in line.strip().split() ) for line in f.readlines()]
 
 
-
-
 # створюємо граф
 G = nx.Graph()
 G.add_nodes_from(range(n))
@@ -30,7 +28,11 @@ dfs(start_node, visited, stack)
 
 
 pos = nx.spring_layout(G)
-nx.draw(G, pos, with_labels=True)
+nx.draw_networkx_nodes(G, pos, node_color='lightblue')
+nx.draw_networkx_nodes(G, pos, nodelist=[start_node], node_color='blue')
+nx.draw_networkx_edges(G, pos, edgelist=[(x,y) for x,y in G.edges() if x!=y], edge_color='black', width=1)    
+nx.draw_networkx_labels(G, pos, font_size=10, font_family="sans-serif")
+plt.axis('off')
 
 plt.savefig('temp0.png')
 # виводимо послідовність ребер
@@ -40,7 +42,7 @@ result = []
 stack.reverse()
 while stack:
     result.append(stack.pop())
-    nx.draw_networkx_edges(G, pos, edgelist=result, edge_color='r', width=2)
+    nx.draw_networkx_edges(G, pos, edgelist=result, edge_color='r', width=3)
     plt.savefig(f'temp{step}.png')
     step+=1
 
