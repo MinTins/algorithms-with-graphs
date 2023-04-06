@@ -9,6 +9,7 @@
 
 class AStarShortestPath {
 public:
+    AStarShortestPath() = default;
     AStarShortestPath(const std::vector<std::vector<std::pair<int, double>>>& graph, int start_vertex);
     void a_star();
     void a_star(const std::string& filename);

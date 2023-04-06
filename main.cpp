@@ -17,6 +17,7 @@ int main() {
     DepthFirstSearch dfs;
     PrimMinimumSpanningTree prim;
     DijkstraShortestPath dsp;
+    AStarShortestPath a_star;
 
 
     std::string input;
@@ -125,7 +126,7 @@ int main() {
                 break;
             case 5:
                 // Test A* Shortest Path
-                // testAStar(input);
+                a_star.a_star(input);
                 break;
             case 6:
                 // Test Ford-Fulkerson Maximum Flow
