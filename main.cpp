@@ -9,6 +9,7 @@
 #include "depth_first_search/depth_first_search.h"
 #include "prim_minimum_spanning_tree/prim_minimum_spanning_tree.h"
 #include "dijkstra_shortest_path/dijkstra_shortest_path.h"
+#include "a_star_shortest_path/a_star_shortest_path.h"
 
 
 int main() {
@@ -81,10 +82,12 @@ int main() {
                 dsp.shortest_path();
                 break;
             }
-            case 5:
+            case 5: {
                 // Test A* Shortest Path
-                // testAStar("a_star_shortest_path/test_a_star_data.txt");
+                AStarShortestPath a_star({ {{1, 1}, {2, 2}}, {{0, 1}, {3, 4}, {4, 5}}, {{0, 2}, {5, 6}}, {{1, 4}, {6, 7}}, {{1, 5}, {6, 8}}, {{2, 6}, {7, 9}}, {{3, 7}, {4,8}, {7, 10}}, {{5, 9}, {6, 10}} }, 0);
+                a_star.a_star();
                 break;
+            }
             case 6:
                 // Test Ford-Fulkerson Maximum Flow
                 // testFordFulkerson("ford_fulkerson_maximum_flow/test_ford_fulkerson_data.txt");

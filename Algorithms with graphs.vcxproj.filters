@@ -30,6 +30,9 @@
     <ClCompile Include="dijkstra_shortest_path\dijkstra_shortest_path.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="a_star_shortest_path\a_star_shortest_path.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="breadth_first_search\breadth_first_search.h">
@@ -44,12 +47,16 @@
     <ClInclude Include="dijkstra_shortest_path\dijkstra_shortest_path.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="a_star_shortest_path\a_star_shortest_path.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="breadth_first_search\breadth_first_search.py" />
     <None Include="depth_first_search\depth_first_search.py" />
     <None Include="prim_minimum_spanning_tree\prim_minimum_spanning_tree.py" />
     <None Include="dijkstra_shortest_path\dijkstra_shortest_path.py" />
+    <None Include="a_star_shortest_path\a_star_shortest_path.py" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="breadth_first_search\test_bfs_data.txt" />
