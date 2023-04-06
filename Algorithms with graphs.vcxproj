@@ -155,6 +155,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="breadth_first_search\breadth_first_search.py" />
+    <None Include="depth_first_search\depth_first_search.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="breadth_first_search\test_bfs_data.txt" />
+    <Text Include="depth_first_search\test_dfs_data.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

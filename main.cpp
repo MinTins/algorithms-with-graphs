@@ -60,7 +60,8 @@ int main() {
                 break;
             case 2:
                 // Test Depth-First Search
-                dfs.test_dfs();
+
+                dfs.dfs("./depth_first_search/test_dfs_data.txt");
                 break;
             case 3:
                 // Test Prim's Minimum Spanning Tree
@@ -95,15 +96,15 @@ int main() {
             switch (choice) {
             case 1:
                 // Test Breadth-First Search
-                //bfs.bfs_from_file(input);
+                bfs.bfs(input);
                 break;
             case 2:
                 // Test Depth-First Search
-                dfs.test_dfs(input);
+                //dfs.test_dfs(input);
                 break;
             case 3:
                 // Test Prim's Minimum Spanning Tree
-                prim.findMSTFromFile(input);
+                //prim.findMSTFromFile(input);
                 break;
             case 4:
                 // Test Dijkstra's Shortest Path
