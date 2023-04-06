@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 
 // import methods
@@ -54,19 +55,24 @@ int main() {
 
         if (input == "1") {
             switch (choice) {
-            case 1:
+            case 1: {
                 // Test Breadth-First Search
-                bfs.bfs("breadth_first_search/test_bfs_data.txt");
+                BreadthFirstSearch bfs({ {1, 2, 3}, {0, 2}, {0, 1, 3}, {0, 2} }, 0);
+                bfs.bfs();
                 break;
-            case 2:
+            }
+            case 2: {
                 // Test Depth-First Search
-
-                dfs.dfs("./depth_first_search/test_dfs_data.txt");
+                DepthFirstSearch dfs({ {1, 2, 3}, {0, 2}, {0, 1, 3}, {0, 2} }, 0);
+                dfs.dfs();
                 break;
-            case 3:
+            }
+            case 3:{
                 // Test Prim's Minimum Spanning Tree
-                prim.testPrim();
+                PrimMinimumSpanningTree prim({ {{1, 2}, {3, 6}}, {{0, 2}, {2, 3}, {3, 8}, {4, 5}}, {{1, 3}, {4, 7}}, {{0, 6}, {1, 8}, {4, 9}}, {{1, 5}, {2, 7}, {3, 9}} }, 0);
+                prim.prim();
                 break;
+            }
             case 4:
                 // Test Dijkstra's Shortest Path
                 // testDijkstra("dijkstra_shortest_path/test_dijkstra_data.txt");
@@ -100,11 +106,11 @@ int main() {
                 break;
             case 2:
                 // Test Depth-First Search
-                //dfs.test_dfs(input);
+                dfs.dfs(input);
                 break;
             case 3:
                 // Test Prim's Minimum Spanning Tree
-                //prim.findMSTFromFile(input);
+                prim.prim(input);
                 break;
             case 4:
                 // Test Dijkstra's Shortest Path
