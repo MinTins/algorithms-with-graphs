@@ -58,13 +58,17 @@ while len(visited) != n:
     mst.append((u, v, w))
     
     # малюємо граф
-    nx.draw_networkx_edges(G, pos, edgelist=mst, edge_color='red', width=3)    
-    nx.draw_networkx_edges(G, pos, edgelist=[(u, v)], edge_color='blue', width=3)
+    nx.draw_networkx_nodes(G, pos, nodelist=visited, node_color='g')
+    nx.draw_networkx_nodes(G, pos, nodelist=[u,v], node_color='r')
+
+    nx.draw_networkx_edges(G, pos, edgelist=mst, edge_color='g', width=3)    
+    nx.draw_networkx_edges(G, pos, edgelist=[(u, v)], edge_color='r', width=3)
 
     plt.savefig(f'temp{step}.png')
     step += 1
 
 # фінальний стан
+nx.draw_networkx_nodes(G, pos, nodelist=visited, node_color='g')
 nx.draw_networkx_edges(G, pos, edgelist=mst, edge_color='green', width=3)    
 plt.savefig(f'temp{step}.png')
 

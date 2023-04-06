@@ -8,12 +8,14 @@
 #include "breadth_first_search/breadth_first_search.h"
 #include "depth_first_search/depth_first_search.h"
 #include "prim_minimum_spanning_tree/prim_minimum_spanning_tree.h"
+#include "dijkstra_shortest_path/dijkstra_shortest_path.h"
 
 
 int main() {
     BreadthFirstSearch bfs;
     DepthFirstSearch dfs;
     PrimMinimumSpanningTree prim;
+    DijkstraShortestPath dsp;
 
 
     std::string input;
@@ -73,10 +75,12 @@ int main() {
                 prim.prim();
                 break;
             }
-            case 4:
+            case 4: {
                 // Test Dijkstra's Shortest Path
-                // testDijkstra("dijkstra_shortest_path/test_dijkstra_data.txt");
+                DijkstraShortestPath dsp({ { {1, 2}, {3, 6} }, { {0, 2}, {2, 3}, {3, 8}, {4, 5} }, { {1, 3}, {4, 7} }, { {0, 6}, {1, 8}, {4, 9} }, { {1, 5}, {2, 7}, {3, 9} } }, 0);
+                dsp.shortest_path();
                 break;
+            }
             case 5:
                 // Test A* Shortest Path
                 // testAStar("a_star_shortest_path/test_a_star_data.txt");
@@ -114,7 +118,7 @@ int main() {
                 break;
             case 4:
                 // Test Dijkstra's Shortest Path
-                // testDijkstra(input);
+                dsp.shortest_path(input);
                 break;
             case 5:
                 // Test A* Shortest Path

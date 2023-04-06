@@ -46,6 +46,9 @@ while stack:
     plt.savefig(f'temp{step}.png')
     step+=1
 
+
+nx.draw_networkx_nodes(G, pos, nodelist=[x for x in range(n) if visited[x]], node_color='g')
+nx.draw_networkx_edges(G, pos, edgelist=result, edge_color='g', width=3)
 plt.savefig(f'temp{step}.png')
 
 # об'єднуємо всі зображення у гіфку

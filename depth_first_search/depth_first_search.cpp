@@ -19,15 +19,15 @@ void DepthFirstSearch::dfs()
 
     m_visited[m_start_vertex] = true;
     m_stack.push(m_start_vertex);
-
+    std::cout << "Visited vertex: " << m_start_vertex << std::endl;
     while (!m_stack.empty()) {
         int current_vertex = m_stack.top();
         m_stack.pop();
-        std::cout << "Visited vertex: " << current_vertex << std::endl;
 
         for (int i = 0; i < m_graph[current_vertex].size(); i++) {
             int neighbor = m_graph[current_vertex][i];
             if (!m_visited[neighbor]) {
+                std::cout << "Visited vertex: " << neighbor << std::endl;
                 m_visited[neighbor] = true;
                 m_stack.push(neighbor);
             }

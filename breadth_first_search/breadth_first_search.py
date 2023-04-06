@@ -41,6 +41,8 @@ queue = [start_node]
 visited = [False] * n
 visited[start_node] = True
 
+result  = []
+
 # починаємо обхід графа
 step = 1
 while queue:
@@ -58,6 +60,7 @@ while queue:
             
             # виділяємо ребро, яке веде до сусідньої вершини
             edge = (node, neighbor)
+            result.append(edge)
             nx.draw_networkx_edges(G, pos, edgelist=[edge], edge_color='r', width=3)
             
             # зберігаємо стан графа
@@ -65,6 +68,8 @@ while queue:
             step += 1
 
 # зберігаємо кінцевий стан графа
+nx.draw_networkx_nodes(G, pos, nodelist=[x for x in range(n) if visited[x]], node_color='g')
+nx.draw_networkx_edges(G, pos, edgelist=result, edge_color='g', width=3)
 plt.savefig(f'temp{step}.png')
 
 # об'єднуємо всі зображення у гіфку
