@@ -10,6 +10,7 @@
 #include "prim_minimum_spanning_tree/prim_minimum_spanning_tree.h"
 #include "dijkstra_shortest_path/dijkstra_shortest_path.h"
 #include "a_star_shortest_path/a_star_shortest_path.h"
+#include "ford_fulkerson_maximum_flow/ford_fulkerson_maximum_flow.h"
 
 
 int main() {
@@ -18,6 +19,7 @@ int main() {
     PrimMinimumSpanningTree prim;
     DijkstraShortestPath dsp;
     AStarShortestPath a_star;
+    FordFulkersonMaximumFlow ff;
 
 
     std::string input;
@@ -89,10 +91,16 @@ int main() {
                 a_star.a_star();
                 break;
             }
-            case 6:
+            case 6: {
                 // Test Ford-Fulkerson Maximum Flow
-                // testFordFulkerson("ford_fulkerson_maximum_flow/test_ford_fulkerson_data.txt");
+                FordFulkersonMaximumFlow ff({ {0, 2, 0, 6, 0},
+                                                 {0, 0, 3, 8, 5},
+                                                 {0, 0, 0, 0, 7},
+                                                 {0, 0, 0, 0, 9},
+                                                 {0, 0, 0, 0, 0} }, 0, 4);
+                ff.ford_fulkerson();
                 break;
+            }
             case 7:
                 // Test Bidirectional Dijkstra Social Network
                 // testBidirectionalDijkstraSocialNetwork("bidirectional_dijkstra_social_network/test_bidirectional_dijkstra_social_network_data.txt");
@@ -130,7 +138,7 @@ int main() {
                 break;
             case 6:
                 // Test Ford-Fulkerson Maximum Flow
-                // testFordFulkerson(input);
+                ff.ford_fulkerson(input);
                 break;
             case 7:
                 // Test Bidirectional Dijkstra Social Network
