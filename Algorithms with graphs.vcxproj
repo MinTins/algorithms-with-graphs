@@ -147,6 +147,7 @@
     <ClCompile Include="breadth_first_search\breadth_first_search.cpp" />
     <ClCompile Include="depth_first_search\depth_first_search.cpp" />
     <ClCompile Include="dijkstra_shortest_path\dijkstra_shortest_path.cpp" />
+    <ClCompile Include="ford_fulkerson_maximum_flow\ford_fulkerson_maximum_flow.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="prim_minimum_spanning_tree\prim_minimum_spanning_tree.cpp" />
   </ItemGroup>
@@ -155,6 +156,7 @@
     <ClInclude Include="breadth_first_search\breadth_first_search.h" />
     <ClInclude Include="depth_first_search\depth_first_search.h" />
     <ClInclude Include="dijkstra_shortest_path\dijkstra_shortest_path.h" />
+    <ClInclude Include="ford_fulkerson_maximum_flow\ford_fulkerson_maximum_flow.h" />
     <ClInclude Include="prim_minimum_spanning_tree\prim_minimum_spanning_tree.h" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +164,7 @@
     <None Include="breadth_first_search\breadth_first_search.py" />
     <None Include="depth_first_search\depth_first_search.py" />
     <None Include="dijkstra_shortest_path\dijkstra_shortest_path.py" />
+    <None Include="ford_fulkerson_maximum_flow\ford_fulkerson_maximum_flow.py" />
     <None Include="prim_minimum_spanning_tree\prim_minimum_spanning_tree.py" />
   </ItemGroup>
   <ItemGroup>
